@@ -1,4 +1,4 @@
-// creare un prompt di rchiesta e-mail 
+// creare un prompt di richiesta e-mail 
 
 const userMail = prompt('Inserisci la tua e-mail');
 console.log(userMail);
@@ -30,3 +30,30 @@ if(validMail){
 }
 
 
+// DADI GAME //
+
+// creare 2 const con calcolo numero random da 1 a 6 per giocatore e pc 
+
+const userDado = Math.floor(Math.random() * 6) +1;
+const pcDado = Math.floor(Math.random() * 6) +1;
+console.log(userDado,pcDado); 
+
+// creare una variabile per stabilire il risultato 
+let whoWin;
+
+// scrivere condizione if per stabilire il risultato
+
+if (userDado === pcDado){
+  whoWin = 'Parità!'
+} else if (userDado > pcDado){
+  whoWin = 'Hai vinto!'
+} else if (userDado < pcDado){
+  whoWin = 'Hai Perso!'
+}
+
+console.log(whoWin);
+
+// stampo in pagina 
+document.getElementById('user').innerHTML = `<p> Tu: ${userDado} </p>`; 
+document.getElementById('pc').innerHTML = `<p> Pc: ${pcDado} </p>`;
+document.getElementById('result').innerHTML = whoWin;
